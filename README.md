@@ -78,3 +78,17 @@
 >         Topic: teste    Partition: 1    Leader: 1       Replicas: 1     Isr: 1
 >         Topic: teste    Partition: 2    Leader: 1       Replicas: 1     Isr: 1
 > ~~~
+
+> PARA CONSUMIR UMA MENSAGEM:
+> 
+> ```kafka-console-consumer --bootstrap-server=localhost:9092 --topic=teste```
+> 
+> Ao executar o comando acima o consumidor fica ativo e preparado para consumir as mensagens, nada é exibido no console.
+> 
+> Para consumir as mensagens desde o começo a flag ```--from-beginning``` deve ser passada
+
+> PARA PRODUZIR UMA MENSAGEM:
+> 
+> ```kafka-console-producer --bootstrap-server=localhost:9092 --topic=teste```
+> 
+> Ao executar o comando acima aparecerá o sinal ```>``` no terminal, a partir dai quando a mensagem for digitada e enviada através do 'enter' esta será consumida.
