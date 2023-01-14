@@ -58,6 +58,7 @@
 > ```kafka-topics --list --bootstrap-server=localhost:9092```
 >
 > #output
+> 
 > __consumer_offsets
 >
 > teste
