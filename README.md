@@ -66,3 +66,15 @@
 > - ignore os topicos do _confluent-controlcenter
 >
 > - __consumer_offsets: guarda qual offset determinado consumer está no momento da leitura dos topicos
+
+> PARA DESCREVER UM TÓPICO:
+> 
+> ```kafka-topics --bootstrap-server=localhost:9092 --topic=teste --describe```
+> ~~~shell
+> $ kafka-topics --bootstrap-server=localhost:9092 --topic=teste --describe
+> #output
+> Topic: teste    PartitionCount: 3       ReplicationFactor: 1    Configs:
+>         Topic: teste    Partition: 0    Leader: 1       Replicas: 1     Isr: 1
+>         Topic: teste    Partition: 1    Leader: 1       Replicas: 1     Isr: 1
+>         Topic: teste    Partition: 2    Leader: 1       Replicas: 1     Isr: 1
+> ~~~
