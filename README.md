@@ -86,6 +86,24 @@
 > Ao executar o comando acima o consumidor fica ativo e preparado para consumir as mensagens, nada é exibido no console.
 > 
 > Para consumir as mensagens desde o começo a flag ```--from-beginning``` deve ser passada
+>
+> Para colocar um consumidor em um grupo a flag ```--group```deve ser passada especificando o nome do grupo. Quando um consumidor está em um group ele vai se encarregar de ler 1 ou mais partições, desde que tenha partições sem consumidor.
+> 
+> **Exemplo**: 
+> 
+> ```kafka-console-consumer --bootstrap-server=localhost:9092 --group=x --topic=teste```
+
+> PARA DESCREVER UM CONSUMER GROUP:
+> 
+> ```kafka-consumer-groups  --bootstrap-server=localhost:9092 --group=x --describe```
+> ~~~shell
+> kafka-consumer-groups  --bootstrap-server=localhost:9092 --group=x --describe
+> # output
+> GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                       HOST            CLIENT-ID
+> x               teste           0          1               1               0               consumer-x-1-005d1526-eaa0-4ee6-8e15-2eea6549f5b5 /172.22.0.3     consumer-x-1
+> x               teste           1          2               2               0               consumer-x-1-005d1526-eaa0-4ee6-8e15-2eea6549f5b5 /172.22.0.3     consumer-x-1
+> x               teste           2          1               1               0               consumer-x-1-13e5be3b-a996-41ef-83da-77e2e26dd614 /172.22.0.3     consumer-x-1
+> ~~~
 
 > PARA PRODUZIR UMA MENSAGEM:
 > 
